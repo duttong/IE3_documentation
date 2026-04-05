@@ -1,6 +1,4 @@
 # IE3 Operator Notes
-## March 26, 2026
-## Contact: Geoff.Dutton@noaa.gov
 
 <p align="center">
   <img
@@ -70,25 +68,26 @@ Also, check the four Omega temperature controllers. From top to bottom, the curr
 
 ## Balancing Sample Flows
 
-Periodically, the sample flows for calibration tanks and air inlets may need to be adjusted.
+Periodically, the sample flows for calibration tanks and air inlets may need to be adjusted. This can now be done from within the running IE3 program using the **`SSV Info`** tab — no need to stop and restart the software.
+
+Target sample flow: **`50 ± 3 cc/min`**
 
 To balance flows:
 
-1. Stop the main IE3 program (press the **`X`** in the top right corner of the chromatogram or control panel screens).
-2. The two screens should close and go away.
-3. Double-click the **`IE3 Idle`** icon on the desktop.
-4. Idle mode allows you to manually step the Stream Selection Valve (SSV) with the buttons on the valve.
-5. Make sure the sample solenoid is open. Click/toggle the "Sample Closed" button on the IE3 control panel software. This button should change states and turn green.
-6. When idle mode starts, it is safe to manually step the Stream Selection Valve (`SSV`). The SSV is the top-most valve on the valve panel. Use the up/down arrows on the valve panel to move through positions.
-7. Systematically, step the SSV to the port positions for the calibration tanks and the air intake positions. These are all odd-number positions. There is an SSV position guide in the IE3 control panel software—press the "SSV position" tab to see the current tank and air assignments.
-8. Check the `Sample Flow` value on the control panel at each odd-numbered position. Target sample flow: **`50 ± 3 cc/min`**.
-- For calibration tanks, adjust the tank regulator.
-- For air lines, adjust the back-pressure regulators on the pump board.
-9. Once all flows are set to the target. Close the IE3 Idle program and restart the IE3 run program.
+1. Click the **`SSV Info`** tab in the IE3 Control Panel.
+2. Press **`Stop Sequence`** and confirm. The SSV will park at a stop port. The `↑` / `↓` / `Home` buttons will become active.
+3. Press **`Sample Closed`** to open the sample loop. The button label will change to confirm the new state.
+4. Use the **`↑`** and **`↓`** buttons to step the SSV to each odd-numbered port.
+5. Wait ~5 seconds at each port for the live flow reading in the `Flow Statistics` table to stabilize.
+6. Adjust the regulator for that port until flow is on target:
+   - Calibration tanks: adjust the tank regulator.
+   - Air lines: adjust the back-pressure regulator on the pump board.
+7. Repeat for all odd-numbered ports. The current port-to-tank/air assignments are listed on this tab or the **`SSV Reference`** table on this tab.
+8. When finished, press **`Restart Run Sequence`** (the same button, which will have changed label) to resume normal operation.
 
 ## SSV Position Table
 
-There is an SSV position guide in the IE3 control panel software—press the `SSV Position` tab to see the current tank and air assignments.
+The **`SSV Reference`** table is on the **`SSV Info`** tab. It shows the configured port-to-tank and port-to-air assignments.
 
 ## Logging Events and Changes
 
@@ -140,7 +139,7 @@ Pressures are logged in the `logs/cylinder_pressures.csv` file.
 
 ## Return to Normal Operation
 
-After balancing, close idle mode and restart normal operation by double-clicking the `IE3 Run` icon on the desktop.
+After balancing flows, press **`Restart Run Sequence`** in the `SSV Info` tab. The SSV sequence will resume from the beginning and data collection will continue normally.
 
 
 ## Desktop Icon Troubleshooting

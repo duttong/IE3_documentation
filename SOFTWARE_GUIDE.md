@@ -1,5 +1,4 @@
 # Software Guide
-## March 26, 2026
 
 ## Overview
 
@@ -38,13 +37,13 @@ All valve objects share one `serial.Serial` connection (passed via `ser=` at con
 
 ### `gc8890.py`
 
-`gc8890.py` is the Agilent 8890 GC driver. It communicates with the GC over SOAP/HTTP and is organized into five sections:
+`gc8890.py` (v3.1) is the Agilent 8890 GC driver. It communicates with the GC over SOAP/HTTP and is organized into five sections:
 
 - **Connection & License Management** — opens a TCP session, obtains a license key from the GC (`GetConnectionContext`), and requests software ownership (`RequestLicense`). The license key and TCP session are always kept paired; renewal via `renew_license_and_ownership()` opens a fresh session atomically under a lock so concurrent timer threads cannot race and create mismatched session/license pairs.
 - **SOAP Communication Infrastructure** — low-level helpers (`header`, `_cmd_head`, `command`) that all GC requests are built on.
 - **Read-only GC Queries** — `GetStatusA`, `GetMethod`, `GetID`, and related status parsing. These do not require ownership.
 - **Owned GC Commands** — `SetMethod`, `SubscribeToData`, and related calls that require ownership. Auxiliary pressure setpoints are applied here.
-- **Detector Data & Chromatogram Handling** — per-channel socket receivers, block decoding, chromatogram boundary management, and `.itx` file export.
+- **Detector Data & Chromatogram Handling** — per-channel socket receivers, block decoding, chromatogram boundary management, and `.itx` file export via `resp2itx()`. When a chromatogram is written with a `SKIP` flag, an INFO-level log entry is emitted. Detector blocks with an unexpected sample count are logged at DEBUG level (not WARNING).
 
 ## Main Runtime: `ie3.py`
 
@@ -57,6 +56,7 @@ Operationally, `ie3.py` is the program to start and stop:
 - `ie3.py --status` checks status without a full run
 - `ie3.py --stop` sends a graceful stop signal to a running instance
 - `ie3.py --restart-at-end` tells a running instance to finish the current sequence and then restart
+- `ie3.py --debug` sets the log level to DEBUG for the session
 
 If you are connected over SSH and want the Qt windows to appear on the instrument's
 local monitor instead of the forwarded X11 session, start the software with:
@@ -81,8 +81,9 @@ During continuous operation, output files now rotate between runs. A run that cr
 The control panel in `display.py` now includes:
 
 - `Info`: live instrument status, GC parameters, Flask Sampling control
-- `Log`: operator event log saved to `logs/log_entries.csv` and synced to Boulder
+- `SSV Info`: sample flow statistics per SSV port, live sample flow, flow balancing controls (Stop/Restart Sequence, Sample Loop, SSV step buttons), and the SSV Reference table showing port-to-tank/air assignments
 - `Cylinders`: manual cylinder pressure log saved to `logs/cylinder_pressures.csv` and synced to Boulder
+- `Log`: operator event log saved to `logs/log_entries.csv` and synced to Boulder
 
 ## Data Sync: `sync2boulder.py`
 
