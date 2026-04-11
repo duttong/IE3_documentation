@@ -91,7 +91,7 @@ The **`SSV Reference`** table is on the **`SSV Info`** tab. It shows the configu
 
 ## Logging Events and Changes
 
-Use the `Log` tab in the IE3 control panel to view and create log messages. By default, the logging software will use the current date and time and retain the operator's name (or initials). Log events such as cylinder changes, system adjustments, and notes that may help with data processing. Flask sampling events will be captured in the log file with the `Flask Sampling Button` detailed below.
+Use the `Log` tab in the IE3 control panel to view and create log messages. The tab shows the current UTC time, and each saved entry always uses the current UTC timestamp at the moment it is written. The software also retains the operator's name (or initials). Log events such as cylinder changes, system adjustments, and notes that may help with data processing. Flask sampling events will be captured in the log file with the `Flask Sampling Button` detailed below.
 
 Logging events are stored in the `logs/log_entries.csv` file.
 
@@ -133,7 +133,27 @@ The table includes five cylinders:
 - `N2 Carrier Gas`
 - `CO2 Dopant`
 
-Only the `Pressure` column is edited manually. Press `Save` to record the current UTC time and write the values to the cylinder pressure log.
+How to use this tab:
+
+1. Go to the `Cylinders` tab.
+2. Check the `Current UTC` line near the top of the card.
+3. Enter the current pressure values in the yellow `Pressure` cells only.
+4. Update these values about once a week when cylinder pressures are checked.
+5. Press `Save` to record the current UTC time and write the values to the cylinder pressure log.
+
+If `logs/tank_inventory.csv` is edited manually, the `Cylinders` tab will reload that file automatically at the start of the next chromatogram cycle.
+
+The other columns are calculated automatically:
+
+- `Logged Date` shows the most recent saved reading time for that cylinder
+- `Daily use` shows the estimated pressure drop in `psi/day`
+- `Change by` shows the estimated date the cylinder will reach `100 psi`
+
+If a pressure is entered incorrectly, save a corrected value for the same cylinder within 1 hour. The software will treat the later value as the correction and ignore the earlier value when calculating `Daily use` and `Change by`.
+
+If a cylinder is replaced with a new full tank, the calculation will reset when the next saved pressure is more than `25 psi` higher than the previous reading. Smaller upward changes are treated as pressure measurement noise and do not increase the high-pressure point used for the `Daily use` estimate.
+
+The `Change by` date is an estimate and depends on accurate regulators and pressure measurements. Use operator judgement when deciding to replace cylinders.
 
 Pressures are logged in the `logs/cylinder_pressures.csv` file.
 
