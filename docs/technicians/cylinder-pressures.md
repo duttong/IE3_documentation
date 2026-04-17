@@ -29,6 +29,61 @@ If a cylinder is replaced with a full tank, the usage estimate resets when the n
 
 Use operator judgement when deciding when to replace cylinders. The `Change by` date is an estimate, not an automatic replacement instruction.
 
+## Tank Swap Buttons
+
+The lower tank inventory table on the `Cylinders` tab includes two buttons:
+
+- `N2 Swap`
+- `Cal Swap`
+
+Use these buttons after the physical cylinder has already been changed. They are not planning buttons; they update the instrument records for a completed swap.
+
+Finish every dialog after pressing a swap button. The button sequence updates more than one record, so canceling partway through can leave the inventory, operator log, or pressure log incomplete.
+
+### N2 Swap
+
+Use `N2 Swap` after replacing the N2 carrier-gas cylinder.
+
+The software will ask for:
+
+1. confirmation that the N2 tank has already been changed
+2. operator name or initials
+3. a log note
+4. the pressure of the new N2 tank in `psi`
+
+When completed, `N2 Swap`:
+
+- adds an operator-log entry
+- decreases the N2 full-cylinder inventory by 1
+- increases the N2 empty-cylinder inventory by 1
+- records the new N2 pressure in `logs/cylinder_pressures.csv`
+
+### Cal Swap
+
+Use `Cal Swap` after replacing one of the calibration or reference cylinders connected to the SSV.
+
+The software will ask for:
+
+1. confirmation that a calibration tank has already been changed
+2. operator name or initials
+3. which SSV calibration position was changed
+4. which new tank serial number was installed
+5. a log note
+6. the pressure of the new tank in `psi`
+
+The SSV positions shown in the dialog come from the current `ssv_positions.yaml` configuration. The available replacement tank serial numbers come from `logs/cal_tanks.csv`.
+
+When completed, `Cal Swap`:
+
+- adds an operator-log entry
+- decreases the calibration full-cylinder inventory by 1
+- increases the calibration empty-cylinder inventory by 1
+- updates `ssv_positions.yaml` so the selected SSV port points to the new tank serial number
+- refreshes the SSV and cylinder tables in the running display
+- records the new tank pressure in `logs/cylinder_pressures.csv`
+
+After using `Cal Swap`, verify that the `SSV Reference` table shows the expected tank on the expected port.
+
 ## Tank Inventory
 
 The software also reads `logs/tank_inventory.csv`. If this file is edited manually, the `Cylinders` tab reloads it at the start of the next chromatogram cycle.
