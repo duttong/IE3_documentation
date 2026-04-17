@@ -3,6 +3,7 @@
 | Term | Meaning |
 | --- | --- |
 | IE3 | Continuous atmospheric GC measurement system documented here |
+| CATS | [Chromatograph for Atmospheric Trace Species](https://gml.noaa.gov/hats/insitu/cats/), the in-situ halocarbons instrument system IE3 is replacing |
 | GC | Agilent 8890 gas chromatograph |
 | GSV | Gas Sample Valve, a two-position Valco valve used per channel |
 | SSV | Stream Selection Valve, the multi-position Valco valve that selects tanks and air inlets |
