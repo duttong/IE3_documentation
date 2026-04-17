@@ -4,7 +4,7 @@ Public documentation for IE3, a continuous atmospheric GC measurement system.
 
 This repository is intended for technicians, software developers, and future project maintainers. The private source repository remains the source of truth for code, credentials, host-specific settings, and deployment-only details. Public documentation here should explain how the system is used, maintained, and understood without exposing private access information.
 
-**IE3** is an acronym for the **In-situ Electron Capture Detector 3rd-generation** instrument. The IE3 systems are replacing the old [CATS](https://gml.noaa.gov/hats/insitu/cats/) instruments. American Samoa (SMO) is the first NOAA observatory to install an IE3 instrument. 
+**IE3** is an acronym for the **In-situ Electron Capture Detector 3rd-generation** instrument. The IE3 systems are replacing the old [CATS](https://gml.noaa.gov/hats/insitu/cats/) instruments. American Samoa (SMO) is the first NOAA observatory to install an IE3 instrument. IE3 is a three-channel gas chromatograph that measures CFC-11, CFC-12, CFC-113, halon-1211, N2O, SF6 about every 15 minutes.
 
 ## Start Here
 
