@@ -1,9 +1,25 @@
 # Runtime Modes
 
-## Command-Line Modes
+## Normal Autonomous Entry Point
+
+For normal autonomous operation, start IE3 through the desktop `IE3 Run` launcher or run the same wrapper from a terminal:
 
 ```bash
-ie3.py                 # normal operation
+run_ie3_loop.sh
+```
+
+The desktop launcher calls `desktop/ie3_launcher.sh`, which activates the IE3 conda environment and then execs `run_ie3_loop.sh`.
+
+`run_ie3_loop.sh` starts `ie3.py` and watches its exit code. It only restarts the program automatically when `ie3.py` exits with the dedicated controlled-restart code after a completed sequence. Other exits are not treated as normal restart requests.
+
+Operators should use `IE3 Run` for normal startup.
+
+## Direct `ie3.py` Modes
+
+The `ie3.py` command-line modes are useful for maintenance, diagnostics, development, and explicit control of a running process. They are not the normal operator entry point for autonomous operation.
+
+```bash
+ie3.py                 # direct one-shot start, without the run_ie3_loop.sh wrapper
 ie3.py --status        # check status without starting a full run
 ie3.py --prerun        # apply prerun settings
 ie3.py --safe          # apply safe settings
@@ -18,7 +34,7 @@ ie3.py --debug         # DEBUG logging for the session
 
 ## Continuous Operation
 
-Normal operation uses the run sequence from `setup.py`. Each injection lasts `450` seconds in the current configuration. A full run sequence is about `10.1` hours.
+Autonomous operation uses the run sequence from `setup.py`. Each injection lasts `450` seconds in the current configuration. A full run sequence is about `10.1` hours.
 
 At the end of a sequence, IE3:
 

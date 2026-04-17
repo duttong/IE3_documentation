@@ -50,6 +50,8 @@ ie3.py --restart-at-end
 4. Confirm the next process starts cleanly.
 5. Expect the first injection after restart to be flagged `SKIP`.
 
+Normal autonomous operation should be started through `run_ie3_loop.sh`, usually by using the desktop `IE3 Run` launcher. Direct `ie3.py` modes are still useful for development checks, diagnostics, and explicit commands such as `--status`, `--stop`, and `--restart-at-end`.
+
 ## Public Documentation Rules
 
 When documenting source behavior in this public repository:

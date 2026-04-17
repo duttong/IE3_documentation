@@ -1,6 +1,6 @@
 # Software Guide
 
-IE3 is a flat Python application. `ie3.py` coordinates hardware drivers, timing, engineering data, chromatogram capture, and the PyQt user interface.
+IE3 is a flat Python application. For normal autonomous operation, the desktop `IE3 Run` launcher starts `run_ie3_loop.sh`; that wrapper starts `ie3.py` and handles controlled restart-at-end exits. `ie3.py` coordinates hardware drivers, timing, engineering data, chromatogram capture, and the PyQt user interface.
 
 ## Main Pages
 
@@ -15,7 +15,8 @@ IE3 is a flat Python application. `ie3.py` coordinates hardware drivers, timing,
 
 | Module | Responsibility |
 | --- | --- |
-| `ie3.py` | Main instrument controller and runtime entry point |
+| `run_ie3_loop.sh` | Normal autonomous entry point used by the desktop launcher |
+| `ie3.py` | Main instrument controller; direct modes are for maintenance, diagnostics, and development |
 | `display.py` | PyQt control panel and chromatogram display |
 | `gc8890.py` | Agilent 8890 SOAP/HTTP driver and detector data handling |
 | `valco.py` | Valco GSV/SSV serial valve driver |

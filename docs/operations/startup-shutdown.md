@@ -2,19 +2,22 @@
 
 ## Normal Startup
 
-The preferred normal startup method is the `IE3 Run` desktop launcher. It runs the wrapper script that restarts `ie3.py` only after a controlled restart-at-end exit.
+The normal startup method is the `IE3 Run` desktop launcher. The launcher activates the IE3 conda environment and starts `run_ie3_loop.sh`.
 
-From a terminal, normal operation is:
+From a terminal, the matching autonomous entry point is:
 
 ```bash
-ie3.py
+run_ie3_loop.sh
 ```
 
-Useful operating modes:
+`run_ie3_loop.sh` starts `ie3.py` and only restarts it automatically after a controlled restart-at-end exit. This is the intended path for normal unattended operation.
+
+Direct `ie3.py` modes are available for maintenance, diagnostics, development, or explicit control of a running process. They are not the normal operator startup path:
 
 ```bash
 ie3.py --status
 ie3.py --prerun
+ie3.py --safe
 ie3.py --warmup
 ie3.py --test
 ie3.py --cleanup
@@ -52,7 +55,7 @@ For a complete IE3 system shutdown and restart, use the [power down and power up
 If connected over SSH and the Qt windows should appear on the instrument's local monitor instead of the forwarded X11 session:
 
 ```bash
-nohup env DISPLAY=:0 XAUTHORITY=$HOME/.Xauthority ie3.py >/tmp/ie3.out 2>&1 &
+nohup env DISPLAY=:0 XAUTHORITY=$HOME/.Xauthority run_ie3_loop.sh >/tmp/ie3.out 2>&1 &
 ```
 
 Use this only when you understand which display session owns the instrument desktop.
