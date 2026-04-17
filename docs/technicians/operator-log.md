@@ -4,14 +4,17 @@ Use the `Log` tab to record events that will matter during later data review or 
 
 Good log entries include:
 
-- cylinder changes
 - regulator adjustments
 - flow balancing
 - sample line changes
 - unusual chromatogram behavior
 - software restarts
-- flask sampling start and finish times
 - anything that could explain a data-quality issue
+
+Some common events are logged automatically by the software:
+
+- cylinder changes are logged when the operator completes the `N2 Swap` or `Cal Swap` button sequence in the `Cylinders` tab
+- flask sampling start and finish events are logged when the operator uses the `Start Flask Sampling` button
 
 ## Timestamp Behavior
 
@@ -24,6 +27,8 @@ Entries are saved to:
 ```text
 logs/log_entries.csv
 ```
+
+This file is synced to Boulder daily.
 
 ## Flask Sampling Button
 
@@ -40,7 +45,7 @@ The button is a toggle:
 
 If the button is left on, a timeout guard returns the software to normal after the configured timeout period.
 
-Flask sampling state changes are written to the operator log automatically:
+Flask sampling state changes are written to the operator log automatically by this button:
 
 - `Flask Sampling Initiated`
 - `Flask Sampling Finished`
