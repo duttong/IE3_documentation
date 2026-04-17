@@ -25,7 +25,7 @@ For normal startup, double click the `IE3 Run` desktop icon.
 If starting from a terminal, run:
 
 ```bash
-ie3.py
+run_ie3_loop.sh
 ```
 
 ## Safe Shutdown
