@@ -11,6 +11,10 @@
 | Engineering CSV | CSV stream of instrument status, hardware readings, and runtime values |
 | Omega | Omega Platinum temperature controller |
 | LabJack | LabJack T7 I/O device used for digital outputs and analog readings |
+| Nafion dryer | Dryer that uses dry N2 counterflow to remove water through a Nafion membrane |
+| Magnesium perchlorate dryer | Final sample drying trap upstream of the GC |
+| Pump board | Pump and back-pressure-regulator assembly that pulls ambient air from tower lines |
+| PCB | Printed circuit board that conditions sensor signals and switches solenoid/fan power |
 | Flask sampling | Temporary mode that redirects `air1` sequence positions to `air2` |
 | SKIP | ITX quality flag for the first injection after software start or controlled restart |
 | KEEP | ITX quality flag for normal usable injections |

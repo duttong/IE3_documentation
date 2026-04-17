@@ -28,6 +28,7 @@ Update documentation whenever a change affects:
 
 For a maintainer transition, review:
 
+- the [hardware guide](../hardware/README.md)
 - how to start and stop IE3
 - how controlled restart works
 - where output files are written

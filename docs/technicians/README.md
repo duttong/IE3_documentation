@@ -4,6 +4,7 @@ IE3 normally runs as a desktop control-panel application on the instrument compu
 
 ## Main Tasks
 
+- [Hardware guide](../hardware/README.md): hardware overview, gas path, photos, electronics, valves, and PCB notes.
 - [Daily checks](daily-checks.md): what to inspect during routine operation.
 - [Power down and power up](power-cycle.md): full system shutdown and restart procedure.
 - [Flow balancing](flow-balancing.md): how to stop the SSV sequence, step through ports, and adjust sample flows.

@@ -7,6 +7,7 @@ This repository is intended for technicians, software developers, and future pro
 ## Start Here
 
 - [Technician Guide](docs/technicians/README.md): normal operation, daily checks, flow balancing, logging, and common recovery steps.
+- [Hardware Guide](docs/hardware/README.md): instrument hardware overview, gas path, electronics, PCB, valves, and slide photos.
 - [Software Guide](docs/software/README.md): software layout, runtime behavior, configuration, data files, and development notes.
 - [Operations Guide](docs/operations/README.md): startup, shutdown, controlled restart, data sync, and routine operating schedule.
 - [Maintainer Guide](docs/maintainers/README.md): handoff notes, documentation upkeep, and project stewardship.
@@ -16,9 +17,9 @@ This repository is intended for technicians, software developers, and future pro
 
 | Audience | Use these pages |
 | --- | --- |
-| Technicians | [Daily checks](docs/technicians/daily-checks.md), [power down and power up](docs/technicians/power-cycle.md), [flow balancing](docs/technicians/flow-balancing.md), [cylinder pressures](docs/technicians/cylinder-pressures.md), [operator log](docs/technicians/operator-log.md), [troubleshooting](docs/technicians/troubleshooting.md) |
+| Technicians | [Hardware guide](docs/hardware/README.md), [daily checks](docs/technicians/daily-checks.md), [power down and power up](docs/technicians/power-cycle.md), [flow balancing](docs/technicians/flow-balancing.md), [cylinder pressures](docs/technicians/cylinder-pressures.md), [operator log](docs/technicians/operator-log.md), [troubleshooting](docs/technicians/troubleshooting.md) |
 | Software developers | [Architecture](docs/software/architecture.md), [runtime modes](docs/software/runtime.md), [configuration](docs/software/configuration.md), [data files](docs/software/data-files.md), [UI design](docs/software/ui-design.md), [development workflow](docs/software/development.md) |
-| Maintainers | [Maintainer guide](docs/maintainers/README.md), [operations](docs/operations/README.md), [startup and shutdown](docs/operations/startup-shutdown.md), [data sync](docs/operations/data-sync.md), [documentation boundaries](docs/reference/public-docs-boundaries.md) |
+| Maintainers | [Maintainer guide](docs/maintainers/README.md), [hardware guide](docs/hardware/README.md), [operations](docs/operations/README.md), [startup and shutdown](docs/operations/startup-shutdown.md), [data sync](docs/operations/data-sync.md), [documentation boundaries](docs/reference/public-docs-boundaries.md) |
 
 ## Source Repositories
 
