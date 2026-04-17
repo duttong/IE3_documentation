@@ -34,8 +34,6 @@ ie3.py --restart-at-end
 
 The running process finishes the current sequence, writes final data, exits with the dedicated restart code, and the wrapper starts a fresh process.
 
-The first injection after restart is flagged `SKIP`.
-
 ## Graceful Stop
 
 To ask a running process to stop:

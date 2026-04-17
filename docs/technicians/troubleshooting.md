@@ -45,7 +45,3 @@ If one SSV position has poor sample flow:
 2. Confirm the SSV position shown in the `SSV Info` tab.
 3. Wait for the live flow reading to stabilize before adjusting.
 4. Log the adjustment in the `Log` tab.
-
-## First Injection After Restart
-
-The first injection after software startup or controlled restart is expected to be flagged `SKIP`. This protects downstream processing from using a sample loop that may not be fully conditioned.

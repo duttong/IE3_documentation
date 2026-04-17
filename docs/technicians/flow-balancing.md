@@ -38,4 +38,4 @@ If the assignments on the instrument differ from this table, use the values show
 
 ## Return to Normal Operation
 
-After balancing flows, press `Restart Run Sequence`. The run sequence restarts from the beginning, and the first injection after restart is flagged `SKIP`.
+After balancing flows, press `Restart Run Sequence`. The run sequence restarts from the beginning.

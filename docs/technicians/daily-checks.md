@@ -7,10 +7,8 @@ Review the three chromatogram channels during normal operation. Watch for:
 - missing chromatograms
 - unusual baseline changes
 - missing, shifted, or unusually shaped peaks
-- repeated bad injections after startup has completed
+- repeated bad injections
 - channel behavior that changes suddenly from the recent pattern
-
-The first injection after a software start or controlled restart is flagged `SKIP` in the output file. Later injections should normally be flagged `KEEP`.
 
 ## Pressures
 
