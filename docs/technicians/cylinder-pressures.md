@@ -9,7 +9,7 @@ Use the `Cylinders` tab to record important cylinder pressures. The tab is desig
 3. Edit only the yellow `Pressure` cells.
 4. Press `Save`.
 
-Pressures are appended to `logs/cylinder_pressures.csv` on the instrument computer.
+Pressures are appended to `logs/cylinder_pressures.csv` on the instrument computer. This file is synced to Boulder daily.
 
 ## Calculated Columns
 
