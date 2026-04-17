@@ -21,6 +21,10 @@ Check the important tank pressures:
 
 Record cylinder pressures about once per week in the `Cylinders` tab. Record changes, regulator adjustments, and unusual readings in the `Log` tab.
 
+## Sample Flows
+
+Check the recorded mean sample flows on the "SSV Info" tab. These flows are stored values from the more recent sample on each air stream. The target flow for each port is **50 ± 3 cc/min**. If the flows are significantly out of range. See the flow-balancing instructions.
+
 ## Omega Temperature Controllers
 
 Check the four Omega temperature controllers. From top to bottom, the current setpoints are:
