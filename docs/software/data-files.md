@@ -18,6 +18,7 @@ Important file types:
 | `logs/log_entries.csv` | operator event log |
 | `logs/ie3_sampleflows.json` | recent SSV flow statistics |
 | `logs/tank_inventory.csv` | tank inventory used by the Cylinders tab |
+| `logs/water_traps.csv` | water trap temperature and setpoint log (standalone mode) |
 
 ## ITX Chromatogram Files
 
@@ -46,7 +47,7 @@ When parsing ITX notes, split on semicolons and read the last non-empty field as
 
 Engineering CSV files are written by `save_ie3_df()` in `ie3.py`. New files include a header row on the first write.
 
-Engineering data includes valve positions, LabJack analog and digital values, Omega values, GC status, and IE3 runtime state.
+Engineering data includes valve positions, LabJack analog and digital values, Omega values, GC status, IE3 runtime state, and water trap temperatures and setpoints. Water trap columns (`water_trap_1_temp`, `water_trap_1_sp`, `water_trap_2_temp`, `water_trap_2_sp`) are polled every 30 s and the most recent values repeat between scans.
 
 ## Metadata JSON
 

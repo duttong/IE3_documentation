@@ -13,7 +13,7 @@ IE3 uses several small configuration files. Keep public documentation focused on
 - SSV stop port
 - auxiliary pressure channel mappings
 - Omega controller addresses
-- LabJack digital and analog channel assignments
+- LabJack digital and analog channel assignments (`water_trap` solenoid on DIO 6)
 
 The GC-facing network interface on the IE3 computer must be on the same subnet as the GC.
 
@@ -28,7 +28,7 @@ The GC-facing network interface on the IE3 computer must be on the same subnet a
 - cleanup duration and temperature threshold
 - sample flush start and stop timing
 - backflush timing
-- solenoid timing
+- solenoid timing (including `h2o_trap_open` and `h2o_trap_close` for the water trap)
 - ITX auxiliary data timing
 - initial plotting limits
 - flask sampling SSV override settings
@@ -59,6 +59,18 @@ Current public summary:
 | `7` | `air2` |
 | `9` | low standard |
 | even positions | stop ports |
+
+## `water_traps.yaml`
+
+`water_traps.yaml` configures the dedicated Peltier water trap Omega CNi controllers:
+
+- `port`: serial port for the water trap RS-485 bus (default `/dev/ttyUSB3`)
+- `baud`: baud rate (9600 for CNi controllers)
+- `interval_seconds`: polling interval used by the standalone `water_traps.py` watch mode
+- `log_file`: standalone CSV log path (default `logs/water_traps.csv`)
+- `traps`: list of `{label, address}` entries, one per controller
+
+This file is intentionally separate from `ie3_config.py` so `water_traps.py` can run independently of the full acquisition software.
 
 ## `omega_config.yaml`
 

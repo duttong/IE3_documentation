@@ -24,6 +24,7 @@ Current tabs:
 | `SSV Info` | Flow statistics, flow balancing controls, and SSV reference |
 | `Cylinders` | Pressure entry, usage projections, and tank inventory |
 | `Log` | Operator notes and event history |
+| `H2O Traps` | Live Peltier water trap temperatures, setpoints, acquisition time, and solenoid control |
 
 ## Layout Rules
 
@@ -40,6 +41,7 @@ Hardware state labels should be explicit:
 
 - use `Sample Open` and `Sample Closed`, not only color
 - use `Start Flask Sampling` and `Flask Sampling in Progress`
+- use `Water Trap On` and `Water Trap Off`
 - show both the numeric SSV position and the configured label when available
 
 ## Operator Safety

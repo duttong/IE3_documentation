@@ -18,6 +18,7 @@ The design is intentionally direct:
 | Agilent 8890 GC | `gc8890.py` | SOAP/HTTP control plus detector data sockets |
 | Valco valves | `valco.py` | One shared serial connection for GSV and SSV valves |
 | Omega controllers | `omega.py` | Reads temperatures, setpoints, and writes PID or setpoint values |
+| Peltier water trap controllers | `water_traps.py` | Dedicated RS-485 bus for the two Omega CNi trap controllers |
 | LabJack T7 | `lj.py` | Digital outputs and analog pressure, flow, and temperature signals |
 | PyQt UI | `display.py` | Operator controls, live status, logs, and chromatogram view |
 
@@ -39,5 +40,6 @@ The PyQt interface includes:
 - `SSV Info`: sample flow statistics, flow balancing controls, and SSV reference table
 - `Cylinders`: cylinder pressure logging and tank inventory display
 - `Log`: operator event log
+- `H2O Traps`: live Peltier water trap temperatures, setpoints, and solenoid control
 
 The UI is not a separate service. It runs inside the same Python process as the instrument controller.
