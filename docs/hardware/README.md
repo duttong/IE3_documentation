@@ -311,6 +311,15 @@ Thermistors use voltage-divider circuits with 10 kohm resistors. There are conne
 
 FET switching circuits let the LabJack control 24 VDC solenoids and fans from low-voltage control signals. The LabJack signal drives an optical isolator, which switches the FET. LED indicators show whether the circuit is active.
 
+The ribbon cable wiring assigns each PCB solenoid circuit to a specific LabJack FIO line (from `ie3-hardware-slide-15.jpg`):
+
+| PCB label | LabJack FIO | DIO address | Current use |
+| --- | --- | --- | --- |
+| Sol1 | FIO7 | 7 | unassigned |
+| Sol2 | FIO6 | 6 | Peltier water trap solenoid |
+| Sol3 | FIO5 | 5 | sample loop out |
+| Sol4 | FIO4 | 4 | sample loop in |
+
 ## Column Cans
 
 The column cans hold the chromatographic columns and heaters.
