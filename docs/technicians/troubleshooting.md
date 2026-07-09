@@ -45,3 +45,7 @@ If one SSV position has poor sample flow:
 2. Confirm the SSV position shown in the `SSV Info` tab.
 3. Wait for the live flow reading to stabilize before adjusting.
 4. Log the adjustment in the `Log` tab.
+
+## Water Trap Readings Look Wrong
+
+See [water traps](water-traps.md) for normal operating range, how to change a setpoint, and when to escalate a `-999` reading or a trap that will not hold steady.

@@ -64,13 +64,15 @@ Current public summary:
 
 `water_traps.yaml` configures the dedicated Peltier water trap Omega CNi controllers:
 
-- `port`: serial port for the water trap RS-485 bus (default `/dev/ttyUSB3`)
+- `port`: serial port for the water trap RS-485 bus (default `/dev/ttyUSB2`)
 - `baud`: baud rate (9600 for CNi controllers)
 - `interval_seconds`: polling interval used by the standalone `water_traps.py` watch mode
 - `log_file`: standalone CSV log path (default `logs/water_traps.csv`)
 - `traps`: list of `{label, address}` entries, one per controller
 
 This file is intentionally separate from `ie3_config.py` so `water_traps.py` can run independently of the full acquisition software.
+
+Setpoints must stay above freezing to avoid ice forming in the trap. Both the `H2O Traps` tab and the `water_traps.py --set` command reject setpoints outside `0-100 °C`.
 
 ## `omega_config.yaml`
 

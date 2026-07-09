@@ -21,6 +21,7 @@ IE3 is a flat Python application. For normal autonomous operation, the desktop `
 | `gc8890.py` | Agilent 8890 SOAP/HTTP driver and detector data handling |
 | `valco.py` | Valco GSV/SSV serial valve driver |
 | `omega.py` | Omega Platinum temperature controller driver |
+| `water_traps.py` | Peltier water trap Omega CNi controller driver; also runs standalone |
 | `lj.py` | LabJack T7 digital and analog I/O |
 | `sync2boulder.py` | SFTP packaging and upload |
 | `setup.py` | Chromatography timing, pressure, and sequence settings |

@@ -38,6 +38,10 @@ Check the four Omega temperature controllers. From top to bottom, the current se
 
 If a controller is far from setpoint, leave a log note and contact the project maintainer before changing PID or method settings.
 
+## Water Traps
+
+Check the `H2O Traps` tab. Normal operating temperature for both traps is `4.0 °C`. See [water traps](water-traps.md) for how to change a setpoint and when to escalate a reading problem.
+
 ## Data Sync
 
 Daily sync is expected to send recent chromatogram run directories plus the cylinder and operator logs to Boulder. See [data sync](../operations/data-sync.md) for the operational details.

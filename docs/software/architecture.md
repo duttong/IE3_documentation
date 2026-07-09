@@ -28,6 +28,12 @@ All GSV and SSV valve objects share one `serial.Serial` connection and a class-l
 
 Do not open multiple serial handles to the same valve bus.
 
+## Water Trap Bus
+
+The two Peltier water trap Omega CNi controllers communicate over their own dedicated RS-485 bus, separate from the column-can Omega bus, because the two buses run at different baud rates. The column-can Omega autodetect logic excludes the water trap's configured port from its search, so it cannot mistake a reply from the wrong bus for a column controller.
+
+Water trap temperatures and setpoints are read on a background timer and cached; the engineering-data timer reads from that cache rather than waiting on serial I/O. The background poll skips its own tick if the previous read has not finished, so two overlapping reads cannot collide on the shared connection.
+
 ## GC Ownership
 
 The GC driver obtains a connection context and requests software ownership from the Agilent 8890. Commands that change GC state require ownership. The driver keeps the TCP session and license key paired and renews both together to avoid mismatched session/license state.

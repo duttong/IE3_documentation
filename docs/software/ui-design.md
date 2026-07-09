@@ -41,7 +41,7 @@ Hardware state labels should be explicit:
 
 - use `Sample Open` and `Sample Closed`, not only color
 - use `Start Flask Sampling` and `Flask Sampling in Progress`
-- use `Water Trap On` and `Water Trap Off`
+- use `Water Trap Open` and `Water Trap Closed`
 - show both the numeric SSV position and the configured label when available
 
 ## Operator Safety
