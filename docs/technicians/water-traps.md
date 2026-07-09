@@ -24,7 +24,7 @@ Normal operating temperature is `4.0 °C`. Allow 30–60 minutes after startup f
 
 The new setpoint applies immediately. Setpoints must stay above freezing to avoid ice forming in the trap; the software rejects setpoints outside `0-100 °C`.
 
-Setpoints can also be changed from the command line with `water_traps.py --set`; see [configuration](../software/configuration.md#water_trapsyaml).
+Setpoints can also be changed from the command line with `water_traps.py --set`; see the [standalone tool reference](../software/water-traps-cli.md) and [configuration](../software/configuration.md#water_trapsyaml).
 
 ## Water Trap Solenoid
 

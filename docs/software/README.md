@@ -9,6 +9,7 @@ IE3 is a flat Python application. For normal autonomous operation, the desktop `
 - [Configuration](configuration.md): hardware configuration, chromatography setup, SSV positions, and Omega PID values.
 - [Data files](data-files.md): chromatogram, engineering, metadata, cylinder, operator, and sample-flow files.
 - [UI design](ui-design.md): visual conventions for the PyQt control panel.
+- [Water trap standalone tool](water-traps-cli.md): `water_traps.py` CLI reference, CSV format, and importable Python API.
 - [Development workflow](development.md): local setup, smoke checks, display simulation, and public documentation rules.
 
 ## Main Source Modules
